@@ -6,30 +6,38 @@
 #include "RadixSort.hpp"
 #include "Timing.hpp"
 
-// #define DEBUG
+#define DEBUG
 
 #ifdef DEBUG
 	#include <algorithm>
 #endif
 
-typedef double types;
+typedef uint64_t types;
 int main (int argc, char *argv[]) {
     const int size = atoi(argv[1]);
     srand(time(NULL));
    
 	std::vector<types> array(size);
 	
-	if (sizeof(types) == 4)
+	if (sizeof(types) == 1)
+		for (int i=0;i<size;i++) {
+			uint8_t *temp = (uint8_t *) &array[i];
+			*temp = (((double) rand() / RAND_MAX) * 0xff);
+		}
+	else if (sizeof(types) == 2)
+		for (int i=0;i<size;i++) {
+			uint16_t *temp = (uint16_t *) &array[i];
+			*temp = (((double) rand() / RAND_MAX) * 0xffff);
+		}
+	else if (sizeof(types) == 4)
 		for (int i=0;i<size;i++) {
 			uint32_t *temp = (uint32_t *) &array[i];
-			*temp = (((double) rand() / RAND_MAX) * 0x0fffffff);
-			if (rand() % 2) *temp |= 0x80000000;
+			*temp = (((double) rand() / RAND_MAX) * 0xffffffff);
 		}
 	else if (sizeof(types) == 8)
 		for (int i=0;i<size;i++) {
 			uint64_t *temp = (uint64_t *) &array[i];
-			*temp = (((double) rand() / RAND_MAX) * 0x0fffffffffffffff);
-			if (rand() % 2) *temp |= 0x8000000000000000;
+			*temp = (((double) rand() / RAND_MAX) * 0xffffffffffffffff);
 		}
 		
 #ifdef DEBUG
