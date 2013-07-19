@@ -9,7 +9,7 @@ all: RadixSortLib  myProc
 # all: myProc
 
 myProc: test.o Timing.o
-	g++ -o Sort test.o Timing.o -lRadixSort $(THREAD_FLAGS)
+	g++ -o Sort test.o Timing.o -L. -lRadixSort $(THREAD_FLAGS)
 
 test.o: test.cpp
 	g++ $(OTHER_FLAGS) -Wall -c test.cpp
