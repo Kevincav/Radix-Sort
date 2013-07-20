@@ -29,7 +29,6 @@ Histogram_32.o: Histogram_32.c Histogram_32.h
 Histogram_64.o: Histogram_64.c Histogram_64.h
 	gcc $(C_FLAGS) -Wall -c Histogram_64.c $(THREAD_FLAGS)
 	
-	
 RadixSortTypes.o: RadixSortTypes.c RadixSortTypes.h
 	gcc $(C_FLAGS) -Wall -c RadixSortTypes.c $(THREAD_FLAGS)
 	

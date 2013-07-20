@@ -52,7 +52,6 @@ int main (int argc, char *argv[]) {
 	scottgs::Timing timer;
 	timer.start();
 	RadixSort::sort(&array[0], size);
-		RadixSort::sort(&array[0], size);
 	timer.stop();
 
 #ifndef DEBUG
