@@ -31,6 +31,17 @@ void RadixSort::sort (int64_t *array, int size) {
 void RadixSort::sort (double *array, int size) {
 	radixSortDouble(array, size);
 }
+void RadixSort::sort (bool *array, int size) {
+	int i = 0, j = size - 1;
+	while (i <= j) {
+		while (!array[i]) i++;
+		while (array[j]) j--;
+		if (i <= j) {
+			array[i] = false;
+			array[j] = true;
+		}
+	}
+}
 void RadixSort::sort (uint8_t *array, int size) {
 	uint32_t hist[256] = {0};
 	uint8_t *temp      = new uint8_t[size]();

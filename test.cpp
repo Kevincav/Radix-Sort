@@ -6,13 +6,13 @@
 #include "RadixSort.hpp"
 #include "Timing.hpp"
 
-#define DEBUG
+// #define DEBUG
 
 #ifdef DEBUG
 	#include <algorithm>
 #endif
 
-typedef float types;
+typedef int types;
 int main (int argc, char *argv[]) {
     const int size = atoi(argv[1]);
     srand(time(NULL));
@@ -52,6 +52,7 @@ int main (int argc, char *argv[]) {
 	scottgs::Timing timer;
 	timer.start();
 	RadixSort::sort(&array[0], size);
+		RadixSort::sort(&array[0], size);
 	timer.stop();
 
 #ifndef DEBUG

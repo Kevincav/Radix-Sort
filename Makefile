@@ -14,7 +14,7 @@ myProc: test.o Timing.o
 test.o: test.cpp
 	g++ $(OTHER_FLAGS) -Wall -c test.cpp
 	
-RadixSortLib:  Histogram_64.o Histogram_32.o Histogram_16.o RadixSort.o RadixSortTypes.o
+RadixSortLib: Histogram_64.o Histogram_32.o Histogram_16.o RadixSort.o RadixSortTypes.o
 	g++ -shared -o libRadixSort.so RadixSort.o Histogram_16.o Histogram_32.o Histogram_64.o RadixSortTypes.o
 	
 RadixSort.o: RadixSort.cpp RadixSort.hpp
@@ -28,6 +28,7 @@ Histogram_32.o: Histogram_32.c Histogram_32.h
 	
 Histogram_64.o: Histogram_64.c Histogram_64.h
 	gcc $(C_FLAGS) -Wall -c Histogram_64.c $(THREAD_FLAGS)
+	
 	
 RadixSortTypes.o: RadixSortTypes.c RadixSortTypes.h
 	gcc $(C_FLAGS) -Wall -c RadixSortTypes.c $(THREAD_FLAGS)
