@@ -48,4 +48,4 @@ Timing.o: Timing.cpp Timing.hpp
 	g++ $(OTHER_FLAGS) -Wall -c Timing.cpp
 
 clean:
-	rm -f *.o *.a *.so Sort
+	rm -f *.o *.so SortC SortCPP
