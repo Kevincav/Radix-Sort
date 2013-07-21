@@ -6,6 +6,11 @@ void radixSortShort(short *array, int size) {
 	int i;
 	uint32_t *histA = (uint32_t *) calloc(NUM_THREADS << 16, sizeof(uint32_t));
 	uint16_t *temp  = (uint16_t *) malloc(size * sizeof(uint16_t));
+	if (!histA || !temp) {
+		if (histA) free(histA);
+		if (temp) free(temp);
+		return;
+	}
 	uint16_t *input = (uint16_t *) array;
 
 	histogram16_t(input, histA, size, pos_int16_t);
@@ -24,6 +29,11 @@ void radixSortuint16_t(uint16_t *array, int size) {
 	int i;
 	uint32_t *histA = (uint32_t *) calloc(NUM_THREADS << 16, sizeof(uint32_t));
 	uint16_t *temp  = (uint16_t *) malloc(size * sizeof(uint16_t));
+	if (!histA || !temp) {
+		if (histA) free(histA);
+		if (temp) free(temp);
+		return;
+	}
 
 	histogram16_t(array, histA, size, pos_uint16_t);
 	
@@ -45,6 +55,13 @@ void radixSortInt(int *array, int size) {
 	uint32_t *histC = (uint32_t *) calloc(HIST_FULL, sizeof(uint32_t));
 	uint32_t *temp  = (uint32_t *) malloc(size * sizeof(uint32_t));
 	uint32_t *input = (uint32_t *) array;
+	if (!histA || !histB || !histC || !temp) {
+		if (histA) free(histA);
+		if (histB) free(histB);
+		if (histC) free(histC);
+		if (temp) free(temp);
+		return;
+	}
 
 	histogram32_t(input, histA, histB, histC, size, pos_int32_t);
 	
@@ -70,6 +87,13 @@ void radixSortuint32_t(uint32_t *array, int size) {
 	uint32_t *histB = (uint32_t *) calloc(HIST_FULL, sizeof(uint32_t));
 	uint32_t *histC = (uint32_t *) calloc(HIST_FULL, sizeof(uint32_t));
 	uint32_t *temp  = (uint32_t *) malloc(size * sizeof(uint32_t));
+	if (!histA || !histB || !histC || !temp) {
+		if (histA) free(histA);
+		if (histB) free(histB);
+		if (histC) free(histC);
+		if (temp) free(temp);
+		return;
+	}
 
 	histogram32_t(array, histA, histB, histC, size, pos_uint32_t);
 	
@@ -97,6 +121,13 @@ void radixSortFloat(float *array, int size) {
 	uint32_t *histC = (uint32_t *) calloc(HIST_FULL, sizeof(uint32_t));
 	uint32_t *temp  = (uint32_t *) malloc(size * sizeof(uint32_t));
 	uint32_t *input = (uint32_t *) array;
+	if (!histA || !histB || !histC || !temp) {
+		if (histA) free(histA);
+		if (histB) free(histB);
+		if (histC) free(histC);
+		if (temp) free(temp);
+		return;
+	}
 	
 	histogram32_t(input, histA, histB, histC, size, forwardf32_t);
 	
@@ -127,6 +158,16 @@ void radixSortDouble(double *array, int size) {
 	uint32_t *histF = (uint32_t *) calloc(HIST_FULL, sizeof(uint32_t));
 	uint64_t *temp  = (uint64_t *) malloc(size * sizeof(uint64_t));
 	uint64_t *input = (uint64_t *) array;
+	if (!histA || !histB || !histC || !histD || !histE || !histF || !temp) {
+		if (histA) free(histA);
+		if (histB) free(histB);
+		if (histC) free(histC);
+		if (histD) free(histD);
+		if (histE) free(histE);
+		if (histF) free(histF);
+		if (temp) free(temp);
+		return;
+	}
 	
 	histogram64_t(input, histA, histB, histC, histD, histE, histF, size, forwardf64_t);
 	
@@ -161,6 +202,16 @@ void radixSortint64_t(int64_t *array, int size) {
 	uint32_t *histF = (uint32_t *) calloc(HIST_FULL, sizeof(uint32_t));
 	uint64_t *temp  = (uint64_t *) malloc(size * sizeof(uint64_t));
 	uint64_t *input = (uint64_t *) array;
+	if (!histA || !histB || !histC || !histD || !histE || !histF || !temp) {
+		if (histA) free(histA);
+		if (histB) free(histB);
+		if (histC) free(histC);
+		if (histD) free(histD);
+		if (histE) free(histE);
+		if (histF) free(histF);
+		if (temp) free(temp);
+		return;
+	}
 	
 	histogram64_t(input, histA, histB, histC, histD, histE, histF, size, pos_int64_t);
 	
@@ -194,6 +245,16 @@ void radixSortuint64_t(uint64_t *input, int size) {
 	uint32_t *histE = (uint32_t *) calloc(HIST_FULL, sizeof(uint32_t));
 	uint32_t *histF = (uint32_t *) calloc(HIST_FULL, sizeof(uint32_t));
 	uint64_t *temp  = (uint64_t *) malloc(size * sizeof(uint64_t));
+	if (!histA || !histB || !histC || !histD || !histE || !histF || !temp) {
+		if (histA) free(histA);
+		if (histB) free(histB);
+		if (histC) free(histC);
+		if (histD) free(histD);
+		if (histE) free(histE);
+		if (histF) free(histF);
+		if (temp) free(temp);
+		return;
+	}
 	
 	histogram64_t(input, histA, histB, histC, histD, histE, histF, size, pos_uint64_t);
 	
