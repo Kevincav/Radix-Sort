@@ -1,7 +1,5 @@
 #include "RadixSortTypes.h"
 
-// Copyright (C) 2013 by Kevin Melkowski, All Rights Reserved.
-
 void radixSortShort(short *array, int size) {
 	int i;
 	uint32_t *histA = (uint32_t *) calloc(NUM_THREADS << 16, sizeof(uint32_t));

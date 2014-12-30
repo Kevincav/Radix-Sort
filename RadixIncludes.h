@@ -1,8 +1,6 @@
 #ifndef _RADIXINCLUDES_H
 #define _RADIXINCLUDES_H
 
-// Copyright (C) 2013 by Kevin Melkowski, All Rights Reserved.
-
 #include <string.h>
 #include <stdlib.h>
 #include <stdint.h>

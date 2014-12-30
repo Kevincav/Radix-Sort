@@ -1,7 +1,5 @@
 #include "Histogram_16.h"
 
-// Copyright (C) 2013 by Kevin Melkowski, All Rights Reserved.
-
 static void *parallel16_t(void *input) {
 	int i;
 	threads16_t *in = (threads16_t *) input;

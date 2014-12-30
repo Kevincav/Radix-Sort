@@ -1,7 +1,5 @@
 #include "Histogram_64.h"
 
-// Copyright (C) 2013 by Kevin Melkowski, All Rights Reserved.
-
 static void *parallel64_t(void *input) {
 	int i;
 	threads64_t *in = (threads64_t *) input;

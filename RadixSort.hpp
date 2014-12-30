@@ -1,8 +1,6 @@
 #ifndef _RADIXSORT_HPP
 #define _RADIXSORT_HPP
 
-// Copyright (C) 2013 by Kevin Melkowski, All Rights Reserved.
-
 #include <iostream>
 
 #include "RadixSortTypes.h"

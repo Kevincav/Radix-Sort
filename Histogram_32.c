@@ -1,7 +1,5 @@
 #include "Histogram_32.h"
 
-// Copyright (C) 2013 by Kevin Melkowski, All Rights Reserved.
-
 static void *parallel32_t(void *input) {
 	int i;
 	threads32_t *in = (threads32_t *) input;

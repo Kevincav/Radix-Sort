@@ -1,8 +1,6 @@
 #ifndef _HISTOGRAM_64_H
 #define _HISTOGRAM_64_H
 
-// Copyright (C) 2013 by Kevin Melkowski, All Rights Reserved.
-
 #include <pthread.h>
 #include "RadixIncludes.h"
 

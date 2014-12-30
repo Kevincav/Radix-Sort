@@ -1,6 +1,5 @@
 #include "RadixSort.hpp"
 
-// Copyright (C) 2013 by Kevin Melkowski, All Rights Reserved.
 void RadixSort::sort (char *array, int size) {
 	uint32_t hist[256] = {0};
 	uint8_t *temp      = new uint8_t[size]();
